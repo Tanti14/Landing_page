@@ -283,7 +283,7 @@ hr.sep-3::after {
   gap: 10px;
 }
 
-.division {
+.division1 {
   border-right: 2px solid var(--btn-bc);
   padding-right: 60px;
 }
@@ -467,7 +467,7 @@ footer p {
     gap: 20px;
   }
 
-  .division {
+  .division1 {
     border-right: 2px solid var(--btn-bc);
     padding-right: 20px;
   }

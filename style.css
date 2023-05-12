@@ -426,16 +426,13 @@ footer p {
 
   .hero-info h2 {
     font-size: 24px;
+    width: 90%;
+    max-width: 500px;
+    min-width: unset;
   }
 
   #hero img {
     display: none;
-  }
-
-  .hero-info h1 {
-    width: 90%;
-    max-width: 500px;
-    min-width: unset;
   }
 
   .hero-info p {
@@ -484,3 +481,81 @@ footer p {
     left: 166px;
   }
 }
+
+
+
+@media (max-width: 425px) {
+  /* Mobile  */
+  #hero {
+    max-width: 420px;
+  }
+
+  .hero-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-info h2 {
+    font-size: 20px;
+    width: 90%;
+    max-width: 410px;
+    min-width: unset;
+  }
+
+  .hero-info p {
+    width: 90%;
+    max-width: 410px;
+  }
+
+  #hero img {
+    display: none;
+  }
+
+  .hero-info-btn button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .hero-info-btn button:hover {
+    transition: all 0.2s;
+    box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 1);
+  }
+
+  #about {
+    max-width: 400px;
+  }
+
+  .about-empresa p {
+    font-size: 14px;
+  }
+
+  #contactus {
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+
+  .location-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .division2 {
+    border-bottom: 1px solid var(--btn-bc);
+    padding-bottom: 20px;
+  }
+
+  .pad2 {
+    padding-top: 5px;
+  }
+
+  .socials {
+    top: 550px;
+    left: 120px;
+  }
+}
+

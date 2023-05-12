@@ -460,9 +460,10 @@ footer p {
 
   #contactus {
     max-width: 500px;
-    margin-bottom: 70px;
+    margin-bottom: 5px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    position: static;
   }
 
   .division {
@@ -478,8 +479,12 @@ footer p {
   }
 
   .socials {
-    top: 550px;
-    left: 165px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    position: static;
+    margin-top: 40px;
   }
 }
 

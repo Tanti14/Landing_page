@@ -461,19 +461,25 @@ footer p {
   #contactus {
     max-width: 500px;
     margin-bottom: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .division {
+    border: none;
+    padding-right: 0;
+    border-bottom: 2px solid var(--btn-bc);
+    padding-bottom: 20px;
   }
 
   .location-container {
     gap: 20px;
-  }
-
-  .pad2 {
-    padding-left: 5px;
+    flex-wrap: wrap;
   }
 
   .socials {
-    top: 380px;
-    left: 166px;
+    top: 550px;
+    left: 165px;
   }
 }
 

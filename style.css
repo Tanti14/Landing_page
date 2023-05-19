@@ -150,20 +150,22 @@ main {
   border: 2px solid var(--btn-bc);
   padding: 5px 20px;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .hero-info-btn button:hover {
-  transition: all 0.8s;
+  transition: all 0.5s ease;
   box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 1);
 }
 
-hr.sep-3 {
+.sep-3 {
   border: none;
   width: 90%;
   height: 1px;
   background-image: linear-gradient(to right, #f0f0f0, #8f8f8f, #f0f0f0);
 }
-hr.sep-3::after {
+
+.sep-3::after {
   content: "§";
   display: inline-block;
   position: absolute;
@@ -253,7 +255,7 @@ hr.sep-3::after {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 70px 0;
+  padding: 90px 0;
   max-width: 1200px;
   gap: 20px;
   position: relative;
@@ -337,31 +339,62 @@ footer p {
   .navbar-list {
     position: absolute;
     top: 65px;
-    right: 15px;
+    right: -1px;
     width: 30%;
     flex-direction: column;
     background-color: var(--nav-bg);
     border: 2px solid var(--btn-bc);
     border-top: 0;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 0 15px;
     align-items: center;
     padding: 45px 30px;
     gap: 25px;
     z-index: 2;
-    display: none;
+    /* display: none; */ /* Descomentar si quiero sacar la animacion de abajo */
+    transform: translateX(200%);
+    transition: all 0.2s ease;
+  }
+
+  #menu-toggle:checked ~ .navbar-list {
+    /* display: flex; */ /* Descomentar si quiero sacar la animacion de abajo */
+    transform: translateX(0);
   }
 
   .navbar-list a {
     font-size: 18px;
   }
 
+  /* Animacion de Menu Hamburguesa (Icono y Slide) */
   .menu-label {
     display: flex;
     cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    padding: 5px;
   }
 
-  #menu-toggle:checked + .navbar-list {
-    display: flex;
+  .menu-label span {
+    height: 2px;
+    width: 30px;
+    background: white;
+    transition: transform 0.3s;
+  }
+
+  #menu-toggle:checked ~ .menu-label span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  #menu-toggle:checked ~ .menu-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked ~ .menu-label span:nth-child(3) {
+    position: absolute;
+    top: 0;
+    transform: rotate(225deg);
   }
 
   #hero {
@@ -390,11 +423,6 @@ footer p {
     font-size: 14px;
   }
 
-  .hero-info-btn button:hover {
-    transition: all 0.2s;
-    box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 1);
-  }
-
   #contactus {
     max-width: 900px;
     margin-bottom: 70px;
@@ -412,6 +440,10 @@ footer p {
 
 @media (max-width: 576px) {
   /* Mobile  */
+  header {
+    padding: 0 15px 0 0;
+  }
+
   #hero {
     max-width: 500px;
   }
@@ -445,11 +477,6 @@ footer p {
     font-size: 14px;
   }
 
-  .hero-info-btn button:hover {
-    transition: all 0.2s;
-    box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 1);
-  }
-
   #about {
     max-width: 500px;
   }
@@ -464,6 +491,11 @@ footer p {
     align-items: center;
     justify-content: flex-start;
     position: static;
+  }
+
+  #info-cards h2 {
+    font-size: 24px;
+    font-weight: 600;
   }
 
   .division {
@@ -488,3 +520,49 @@ footer p {
   }
 }
 
+/* Animaciones */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
+.navbar-list li {
+  position: relative;
+}
+
+.navbar-list li a::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--text-white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.15s ease;
+}
+
+.navbar-list li a:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: none;
+}
+
+#menu-toggle:checked ~ .blur-overlay {
+  display: block;
+}

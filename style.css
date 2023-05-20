@@ -178,9 +178,18 @@ main {
 
 /* About Section */
 #about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   max-width: 900px;
   padding: 30px 0;
-  text-align: center;
+}
+
+.about-empresa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-empresa p {
@@ -195,7 +204,7 @@ main {
   align-items: center;
   padding: 70px 0;
   max-width: 1200px;
-  gap: 40px;
+  gap: 30px;
 }
 
 #info-cards h2 {
@@ -255,7 +264,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 90px 0;
+  padding: 50px 0;
   max-width: 1200px;
   gap: 20px;
   position: relative;
@@ -403,24 +412,40 @@ footer p {
   }
 
   #hero img {
-    width: 320px;
+    display: none;
+  }
+
+  .hero-info {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-info h2 {
-    width: 90%;
     max-width: 80%;
+    width: 90%;
     min-width: unset;
   }
 
   .hero-info p {
+    max-width: 700px;
     width: 90%;
-    max-width: 600px;
     font-size: 16px;
+  }
+
+  .hero-info-btn {
+    justify-content: center;
   }
 
   .hero-info-btn button {
     padding: 5px 10px;
     font-size: 14px;
+    transition: none;
+  }
+
+  .hero-info-btn button:hover {
+    transition: none;
+    box-shadow: none;
   }
 
   #contactus {
@@ -449,10 +474,6 @@ footer p {
   }
 
   .hero-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     gap: 20px;
   }
 
@@ -461,10 +482,6 @@ footer p {
     width: 90%;
     max-width: 500px;
     min-width: unset;
-  }
-
-  #hero img {
-    display: none;
   }
 
   .hero-info p {
@@ -482,7 +499,8 @@ footer p {
   }
 
   .about-empresa p {
-    font-size: 16px;
+    width: 90%;
+    font-size: 14px;
   }
 
   #contactus {
@@ -495,7 +513,7 @@ footer p {
 
   #info-cards h2 {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 800;
   }
 
   .division {
@@ -521,7 +539,6 @@ footer p {
 }
 
 /* Animaciones */
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 65px;
